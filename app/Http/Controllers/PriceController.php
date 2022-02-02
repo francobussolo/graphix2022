@@ -79,9 +79,11 @@ class PriceController extends Controller
      * @param  \App\Models\Price  $price
      * @return \Illuminate\Http\Response
      */
-    public function edit(Price $price)
+    public function edit($id)
     {
-        //
+        $price = Client::find($id);
+
+        return view('price.edit',compact('price'));
     }
 
     /**
