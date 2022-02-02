@@ -1,5 +1,5 @@
 $("#trim").mask("#0.0", {reverse: true});
-$('#value').mask("#0.000");
+$('#value').mask("#.000");
 
 var route = '/client/ajax';
 var id = $("#client_id");

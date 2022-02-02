@@ -49,7 +49,7 @@
       </svg>    
 
       <main class="py-0 bg-body-graphix" >
-        <header>
+        <header class="fixed-top">
             <div class="px-3 py-2 bg-header-graphix text-white">
                 <div class="container">
                     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">

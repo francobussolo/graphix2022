@@ -36,7 +36,7 @@
 @endpush
 
 @section('content')
-<div class="py-4 container">
+<div class="py-4 container ct-gpx">
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">

@@ -7,7 +7,7 @@
 @endpush
 
 @section('content')
-<div class="py-4 container">
+<div class="py-4 container ct-gpx">
     <div class="row justify-content-center">
         <div class="col-md-9">
             <div class="card">
@@ -15,12 +15,12 @@
                 <form method="POST" action="{{ route('price.update',$price->id) }}">
                     <div class="card-body row g-3">
                         @csrf
-
+                        @method('PUT')
                         <div class="col-md-12">
                             <label for="client">{{ __('Cliente ') }}</label>
                             <input type="text" class="form-control typeahead" id="client" name="client" value="{{ old('client') ?: $price->client->name }}"
                                 placeholder="Razão Social do Cliente" data-provide="typeahead" required autocomplete="off">
-                            <input type="hidden" name="client_id" id="client_id" value="{{ old('client_id') ?: $price->client->id }}">
+                            <input type="hidden" name="client_id" id="client_id" value="{{ old('client_id') ?: $price->client_id }}">
                         </div>
                         <div class="col-md-4">
                             <label for="name">Descrição:</label>
@@ -52,8 +52,9 @@
                     <div class="form-row">
                         <div class="form-group offset-md-9 col-md-3">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="1" checked id="active"
-                                    name="active">
+                            <input type="hidden" value="0" name="active">
+                                <input class="form-check-input" type="checkbox" value="1" id="active" name="active"
+                                {{ ($price->active == 1 ? ' checked' : '') }}>
                                 <label class="form-check-label" for="active">
                                     Tabela de Preço Ativa?
                                 </label>

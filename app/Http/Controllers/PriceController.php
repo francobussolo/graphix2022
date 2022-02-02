@@ -48,7 +48,7 @@ class PriceController extends Controller
             'name' => 'required|string|max:50',
             'value' => 'required',
             'trim' => 'required',
-            'active' => 'accepted',
+            'active' => 'nullable',
             'client_id' => 'required',
         ]);
 
@@ -81,7 +81,7 @@ class PriceController extends Controller
      */
     public function edit($id)
     {
-        $price = Client::find($id);
+        $price = Price::find($id);
 
         return view('price.edit',compact('price'));
     }
@@ -95,7 +95,21 @@ class PriceController extends Controller
      */
     public function update(Request $request, Price $price)
     {
-        //
+        $v = Validator::make($request->all(), [
+            'name' => 'required|string|max:50',
+            'value' => 'required',
+            'trim' => 'required',
+            'active' => 'nullable',
+            'client_id' => 'required',
+        ]);
+        if ($v->fails())
+        {
+            return redirect()->back()->withErrors($v)->withInput();
+        }
+
+        $price->update($request->all());
+        
+        return redirect()->route('price.index')->with('success','Tabela de preço atualizado com sucesso!.');
     }
 
     /**
@@ -106,7 +120,9 @@ class PriceController extends Controller
      */
     public function destroy(Price $price)
     {
-        //
+        $price->delete();
+
+        return redirect()->route('price.index')->with('success','Tabela de preço excluida com sucesso!.');
     }
 
     public function list(Request $request)

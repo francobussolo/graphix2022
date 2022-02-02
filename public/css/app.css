@@ -17449,7 +17449,8 @@ main {
 .bg-body-graphix {
   text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
   background-image: linear-gradient(to right, #000, #003468, #003468, #000);
-  padding-top: 100px;
+  padding-bottom: 100px;
+  margin-bottom: 100px;
 }
 
 .bg-pantone-2022 {
@@ -17470,4 +17471,8 @@ main {
   border: solid rgba(0, 0, 0, 0.15);
   border-width: 1px 0;
   box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1), inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+}
+
+.ct-gpx {
+  margin-top: 130px;
 }

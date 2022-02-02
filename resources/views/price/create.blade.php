@@ -7,7 +7,7 @@
 @endpush
 
 @section('content')
-<div class="py-4 container">
+<div class="py-4 container ct-gpx">
     <div class="row justify-content-center">
         <div class="col-md-9">
             <div class="card">
@@ -52,6 +52,7 @@
                     <div class="form-row">
                         <div class="form-group offset-md-9 col-md-3">
                             <div class="form-check">
+                            <input type="hidden" value="0" name="active">
                                 <input class="form-check-input" type="checkbox" value="1" checked id="active"
                                     name="active">
                                 <label class="form-check-label" for="active">
