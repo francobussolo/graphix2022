@@ -7,13 +7,13 @@
 @endpush
 
 @section('content')
-<div class="py-4 container ct-gpx">
+<div class="py-4 container ">
     <div class="row justify-content-center">
-        <div class="col-md-9">
-            <div class="card">
-                <h4 class="card-header bg-title-graphix">{{ __('Editar Tabela de Preço') }}</h4>
-                <form method="POST" action="{{ route('price.update',$price->id) }}">
-                    <div class="card-body row g-3">
+        <div class="col-md-10">
+            <div class="wrapper">
+                <h4 class="bg-title-graphix">{{ __('Editar Tabela de Preço') }}</h4>
+                <form method="POST" action="{{ route('price.update',$price->id) }}" class="row">
+                    
                         @csrf
                         @method('PUT')
                         <div class="col-md-12">
@@ -47,7 +47,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+
 
                     <div class="form-row">
                         <div class="form-group offset-md-9 col-md-3">
@@ -61,10 +61,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <button type="submit" class="btn btn-primary btn-submit">{{ __('Save') }}</button>
-                        <button type="reset" id="reset" class="btn btn-secondary">{{ __('Clear') }}</button>
-                    </div>
+                    <div class="form-row">
+                        <button type="submit" class="btn btn-primary btn-submit col-md-1">{{ __('Save') }}</button>
+                        <button type="reset" id="reset" class="btn btn-secondary col-md-1">{{ __('Clear') }}</button>
+</div> 
                 </form>
             </div>
         </div>

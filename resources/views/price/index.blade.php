@@ -37,11 +37,11 @@
 @endpush
 
 @section('content')
-<div class="py-4 container ct-gpx">
+<div class="py-4 container ">
     <div class="row justify-content-center">
         <div class="col-md-10">
-            <div class="card">
-                <h4 class="card-header bg-title-graphix">{{ __('Tabelas de Preço') }}</h4>
+            <div class="wrapper">
+                <h4 class="bg-title-graphix">{{ __('Tabelas de Preço') }}</h4>
 
                 @if ($message = Session::get('success'))
                     <div class="alert alert-success">
